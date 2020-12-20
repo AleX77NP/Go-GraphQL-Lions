@@ -1,0 +1,24 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Lion {
+  _id: String!
+  name: String!
+  isKing: Boolean!
+}
+
+
+type Query {
+  lion(_id: String!): Lion!
+  lions: [Lion!]!
+}
+
+input NewLion {
+  name: String!
+  isKing: Boolean!
+}
+
+type Mutation {
+  createLion(input: NewLion!): Lion!
+}
